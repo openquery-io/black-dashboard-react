@@ -11,6 +11,7 @@
     "history": "4.7.2",
     "node-sass": "^4.13.0",
     "perfect-scrollbar": "1.4.0",
+    "prismjs": "^1.17.1",
     "prop-types": "^15.6.2",
     "react": "16.5.2",
     "react-chartjs-2": "^2.7.4",
@@ -19,6 +20,7 @@
     "react-notification-alert": "0.0.8",
     "react-router-dom": "4.3.1",
     "react-scripts": "2.0.4",
+    "react-simple-code-editor": "^0.10.0",
     "reactstrap": "6.5.0"
   },
   "scripts": {

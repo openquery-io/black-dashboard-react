@@ -129,18 +129,6 @@ class AdminNavbar extends React.Component {
             </button>
             <Collapse navbar isOpen={this.state.collapseOpen}>
               <Nav className="ml-auto" navbar>
-                <InputGroup className="search-bar">
-                  <Button
-                    color="link"
-                    data-target="#searchModal"
-                    data-toggle="modal"
-                    id="search-button"
-                    onClick={this.toggleModalSearch}
-                  >
-                    <i className="tim-icons icon-zoom-split" />
-                    <span className="d-lg-none d-md-block">Search</span>
-                  </Button>
-                </InputGroup>
                 <UncontrolledDropdown nav>
                   <DropdownToggle
                     caret
@@ -149,7 +137,7 @@ class AdminNavbar extends React.Component {
                     nav
                   >
                     <div className="notification d-none d-lg-block d-xl-block" />
-                    <i className="tim-icons icon-sound-wave" />
+                    <i className="tim-icons icon-bell-55" />
                     <p className="d-lg-none">Notifications</p>
                   </DropdownToggle>
                   <DropdownMenu className="dropdown-navbar" right tag="ul">
@@ -177,33 +165,6 @@ class AdminNavbar extends React.Component {
                       <DropdownItem className="nav-item">
                         Another one
                       </DropdownItem>
-                    </NavLink>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-                <UncontrolledDropdown nav>
-                  <DropdownToggle
-                    caret
-                    color="default"
-                    data-toggle="dropdown"
-                    nav
-                    onClick={e => e.preventDefault()}
-                  >
-                    <div className="photo">
-                      <img alt="..." src={require("assets/img/anime3.png")} />
-                    </div>
-                    <b className="caret d-none d-lg-block d-xl-block" />
-                    <p className="d-lg-none">Log out</p>
-                  </DropdownToggle>
-                  <DropdownMenu className="dropdown-navbar" right tag="ul">
-                    <NavLink tag="li">
-                      <DropdownItem className="nav-item">Profile</DropdownItem>
-                    </NavLink>
-                    <NavLink tag="li">
-                      <DropdownItem className="nav-item">Settings</DropdownItem>
-                    </NavLink>
-                    <DropdownItem divider tag="li" />
-                    <NavLink tag="li">
-                      <DropdownItem className="nav-item">Log out</DropdownItem>
                     </NavLink>
                   </DropdownMenu>
                 </UncontrolledDropdown>
