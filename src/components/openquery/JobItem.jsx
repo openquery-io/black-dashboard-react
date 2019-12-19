@@ -1,6 +1,5 @@
 import React from "react";
-import {Alert, Col, Row, UncontrolledAlert} from "reactstrap";
-import NotificationAlert from "react-notification-alert/index";
+import {Alert, Col, Row} from "reactstrap";
 
 class JobItem extends React.Component {
     constructor(props) {
@@ -52,10 +51,15 @@ class JobItem extends React.Component {
         }
     }
 
+    handleClick() {
+        console.log("clicked")
+    }
+
+
     render() {
 
         return <>
-            <Alert className="alert-with-icon" color={this.color()}>
+            <Alert className="alert-with-icon" color={this.color()} >
 
                 {this.icon()}
 

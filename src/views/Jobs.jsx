@@ -20,14 +20,12 @@ import React from "react";
 
 // reactstrap components
 import {
-  Button,
   Card,
   CardHeader,
   CardBody,
   CardTitle,
-  Table,
   Row,
-  Col, ListGroup,
+  Col,
 } from "reactstrap";
 import JobItem from "../components/openquery/JobItem";
 
