@@ -11,7 +11,16 @@ class JobItem extends React.Component {
             jobStatus: props.jobStatus,
             query: props.query,
             collapsed: true,
-        }
+            error: ""
+        };
+
+        // This binding is necessary to make `this` work in the callback
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    triggerDownload() {
+        console.log("Download clicked");
+        // TODO call endpoint with download link. Probably need an href or something
     }
 
     color() {
@@ -52,35 +61,105 @@ class JobItem extends React.Component {
     }
 
     handleClick() {
-        console.log("clicked")
+        this.setState(state => ({
+            collapsed: !state.collapsed
+        }));
+    }
+
+    inner() {
+        return (
+            <>
+                <Row>
+                    <Col xs={1}>
+                        Job ID
+                    </Col>
+                    <Col>
+                        {this.state.jobId}
+                    </Col>
+                </Row>made w
+                <Row>
+                    <Col xs={1}>
+                        User
+                    </Col>
+                    <Col>
+                        christos@openquery.io
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={1}>
+                        Start Time
+                    </Col>
+                    <Col>
+                        {this.state.timeExecuted}
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={1}>
+                        End Time
+                    </Col>
+                    <Col>
+                        {this.state.timeExecuted}
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={1}>
+                        Destination Table:
+                    </Col>
+                    <Col>
+                        BigQuery: organisation.anonymized_output
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={1}>
+                        Errors:
+                    </Col>
+                    <Col>
+                        {this.state.error}
+                    </Col>
+                </Row>
+            </>
+
+        );
     }
 
 
     render() {
 
         return <>
-            <Alert className="alert-with-icon" color={this.color()} >
+            <div onClick={this.handleClick}>
+                <Alert className="alert" color={this.color()}>
 
-                {this.icon()}
+                    <span data-notify="message">
 
-
-                <span data-notify="message">
                     <Row>
+                        <Col xs={1}>
+                            {this.icon()}
+                        </Col>
                         <Col xs={2}>
                             {this.props.timeExecuted}
                         </Col>
                         <Col xs={2}>
                             Status: {this.state.jobStatus}
                         </Col>
-                        <Col xs={8}>
+                        <Col xs={6}>
                             {this.props.query}
                         </Col>
-                        <Col>
-
+                        <Col xs={1}>
+                            <span onClick={this.triggerDownload()}
+                                className="text-right tim-icons icon-cloud-download-93"
+                                data-notify="icon"
+                            />
                         </Col>
                     </Row>
+
+                    <div hidden={this.state.collapsed}>
+                        <br/>
+                        {this.inner()}
+                    </div>
+
                 </span>
-            </Alert>
+                </Alert>
+            </div>
         </>
     }
 }

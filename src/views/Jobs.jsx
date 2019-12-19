@@ -44,7 +44,7 @@ class Jobs extends React.Component {
         <div className="content">
           <Row>
             <Col xs="12">
-              <Card className="card-chart">
+              <Card>
                 <CardHeader>
                   <Row>
                     <Col className="text-left" sm="6">
@@ -58,16 +58,19 @@ class Jobs extends React.Component {
                         timeExecuted={"2019-10-30 T 11:10 UTC"}
                         query={"SELECT * FROM organisation.confidential_dataset.table"}
                         jobStatus={"running"}
+                        jobId={"123"}
                     />
                     <JobItem
                         timeExecuted={"2019-10-30 T 10:45 UTC"}
                         query={"SELECT * FROM organisation.confidential_dataset.table"}
                         jobStatus={"success"}
+                        jobId={"456"}
                     />
                     <JobItem
                         timeExecuted={"2019-10-30 T 09:42 UTC"}
                         query={"SELECT * FROM organisation.confidential_dataset.no_table"}
                         jobStatus={"failed"}
+                        jobId={"789"}
                     />
                   </div>
                 </CardBody>

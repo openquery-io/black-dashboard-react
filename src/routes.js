@@ -33,7 +33,7 @@ var routes = [
     path: "/jobs",
     name: "Jobs",
     rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-chart-pie-36",
+    icon: "tim-icons icon-components",
     component: Jobs,
     layout: "/admin"
   },
