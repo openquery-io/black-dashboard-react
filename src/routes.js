@@ -26,68 +26,36 @@ import UserProfile from "views/UserProfile.jsx";
 
 var routes = [
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: "/query",
+    name: "Query",
+    rtlName: "لوحة القيادة",
+    icon: "tim-icons icon-zoom-split",
+    component: Dashboard,
+    layout: "/admin"
+  },
+  {
+    path: "/jobs",
+    name: "Jobs",
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-chart-pie-36",
     component: Dashboard,
     layout: "/admin"
   },
   {
-    path: "/icons",
-    name: "Icons",
+    path: "/datasets",
+    name: "Datasets",
     rtlName: "الرموز",
-    icon: "tim-icons icon-atom",
+    icon: "tim-icons icon-app",
     component: Icons,
     layout: "/admin"
   },
   {
-    path: "/map",
-    name: "Map",
+    path: "/config",
+    name: "Configuration",
     rtlName: "خرائط",
-    icon: "tim-icons icon-pin",
+    icon: "tim-icons icon-settings-gear-63",
     component: Map,
     layout: "/admin"
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    rtlName: "إخطارات",
-    icon: "tim-icons icon-bell-55",
-    component: Notifications,
-    layout: "/admin"
-  },
-  {
-    path: "/user-profile",
-    name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: "tim-icons icon-single-02",
-    component: UserProfile,
-    layout: "/admin"
-  },
-  {
-    path: "/tables",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "tim-icons icon-puzzle-10",
-    component: TableList,
-    layout: "/admin"
-  },
-  {
-    path: "/typography",
-    name: "Typography",
-    rtlName: "طباعة",
-    icon: "tim-icons icon-align-center",
-    component: Typography,
-    layout: "/admin"
-  },
-  {
-    path: "/rtl-support",
-    name: "RTL Support",
-    rtlName: "ار تي ال",
-    icon: "tim-icons icon-world",
-    component: Rtl,
-    layout: "/rtl"
   }
 ];
 export default routes;
