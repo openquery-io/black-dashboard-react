@@ -19,6 +19,7 @@ import Dashboard from "views/Dashboard.jsx";
 import Jobs from "views/Jobs.jsx";
 import Icons from "views/Icons.jsx";
 import Map from "views/Map.jsx";
+import Docs from "views/Docs"
 
 var routes = [
   {
@@ -51,6 +52,14 @@ var routes = [
     rtlName: "خرائط",
     icon: "tim-icons icon-settings-gear-63",
     component: Map,
+    layout: "/admin"
+  },
+  {
+    path: "/docs",
+    name: "Docs",
+    rtlName: "خرائط",
+    icon: "tim-icons icon-single-copy-04",
+    component: Docs,
     layout: "/admin"
   }
 ];
