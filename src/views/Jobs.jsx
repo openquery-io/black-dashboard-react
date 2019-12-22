@@ -27,7 +27,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import JobItem from "../components/openquery/JobItem";
+import Job from "../components/openquery/Job";
 
 
 
@@ -54,19 +54,19 @@ class Jobs extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <div className="chart-area">
-                    <JobItem
+                    <Job
                         timeExecuted={"2019-10-30 T 11:10 UTC"}
                         query={"SELECT * FROM organisation.confidential_dataset.table"}
                         jobStatus={"running"}
                         jobId={"123"}
                     />
-                    <JobItem
+                    <Job
                         timeExecuted={"2019-10-30 T 10:45 UTC"}
                         query={"SELECT * FROM organisation.confidential_dataset.table"}
                         jobStatus={"success"}
                         jobId={"456"}
                     />
-                    <JobItem
+                    <Job
                         timeExecuted={"2019-10-30 T 09:42 UTC"}
                         query={"SELECT * FROM organisation.confidential_dataset.no_table"}
                         jobStatus={"failed"}

@@ -1,7 +1,7 @@
 import React from "react";
 import {Alert, Col, Row} from "reactstrap";
 
-class JobItem extends React.Component {
+class Job extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -39,7 +39,7 @@ class JobItem extends React.Component {
             case "success":
                 return (
                     <span
-                        className="tim-icons icon-satisfied"
+                        className="tim-icons icon-check-2"
                         data-notify="icon"
                     />
                 );
@@ -76,7 +76,7 @@ class JobItem extends React.Component {
                     <Col>
                         {this.state.jobId}
                     </Col>
-                </Row>made w
+                </Row>
                 <Row>
                     <Col xs={1}>
                         User
@@ -164,4 +164,4 @@ class JobItem extends React.Component {
     }
 }
 
-export default JobItem;
+export default Job;
