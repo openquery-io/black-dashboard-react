@@ -17,9 +17,9 @@
 */
 import Dashboard from "views/Dashboard.jsx";
 import Jobs from "views/Jobs.jsx";
-import Icons from "views/Icons.jsx";
-import Map from "views/Map.jsx";
-import Docs from "views/Docs"
+import Docs from "views/Docs";
+import Datasets from "views/Datasets";
+import Configuration from "views/Configuration"
 
 var routes = [
   {
@@ -43,7 +43,7 @@ var routes = [
     name: "Datasets",
     rtlName: "الرموز",
     icon: "tim-icons icon-app",
-    component: Icons,
+    component: Datasets,
     layout: "/admin"
   },
   {
@@ -51,7 +51,7 @@ var routes = [
     name: "Configuration",
     rtlName: "خرائط",
     icon: "tim-icons icon-settings-gear-63",
-    component: Map,
+    component: Configuration,
     layout: "/admin"
   },
   {
