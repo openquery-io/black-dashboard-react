@@ -45,18 +45,19 @@ class Dashboard extends React.Component {
         <div className="content">
           <Row>
             <Col xs="12">
-              <Card className="card-chart">
-                <CardHeader>
-                  <Row>
-                    <Col className="text-left" sm="6">
-                      <CardTitle tag="h2">Query Engine</CardTitle>
-                    </Col>
-                  </Row>
-                </CardHeader>
+              <Card >
                 <CardBody>
-                  <div className="chart-area">
-                    {/*TODO insert editor here*/}
-                  </div>
+                    <ul className="nav nav-tabs">
+                      <li className="nav-item">
+                        <a className="nav-link active" href="#">Active</a>
+                      </li>
+                      <li className="nav-item">
+                        <a className="nav-link" href="#">Link</a>
+                      </li>
+                      <li className="nav-item">
+                        <a className="nav-link disabled" href="#">Disabled</a>
+                      </li>
+                    </ul>
                 </CardBody>
               </Card>
             </Col>
@@ -121,18 +122,8 @@ class Dashboard extends React.Component {
                         <td>Feldkirchen in Kärnten</td>
                         <td className="text-center">$63,542</td>
                       </tr>
-                      <tr>
-                        <td>Mason Porter</td>
-                        <td>Chile</td>
-                        <td>Gloucester</td>
-                        <td className="text-center">$78,615</td>
-                      </tr>
-                      <tr>
-                        <td>Jon Porter</td>
-                        <td>Portugal</td>
-                        <td>Gloucester</td>
-                        <td className="text-center">$98,615</td>
-                      </tr>
+
+
                     </tbody>
                   </Table>
                 </CardBody>
