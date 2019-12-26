@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Card, CardBody, CardFooter, CardText} from "reactstrap";
+import {Card, CardBody, CardText} from "reactstrap";
 
 class Dataset extends React.Component {
 

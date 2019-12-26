@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Card, CardHeader, CardBody, Row, Col, CardText} from "reactstrap";
+import {Card, CardBody, Row, Col, CardText} from "reactstrap";
 import Dataset from "../components/openquery/Dataset";
 
 class Datasets extends React.Component {
@@ -65,7 +65,6 @@ class AddDataset extends React.Component {
                                 />
                                 <h2 className="title">"Add Dataset"</h2>
                             </a>
-                            <h3 className="description"></h3>
                         </div>
                     </CardBody>
                 </Card>
