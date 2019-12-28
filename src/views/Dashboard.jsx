@@ -16,24 +16,15 @@
 
 */
 import React from "react";
-// nodejs library that concatenates classes
-
 // reactstrap components
-import {
-    Button,
-    Card,
-    CardHeader,
-    CardBody,
-    CardTitle,
-    Table,
-    Row,
-    Col,
-} from "reactstrap";
+import {Button, Card, CardBody, CardHeader, CardTitle, Col, Row, Table,} from "reactstrap";
 
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-tomorrow_night";
 import "ace-builds/src-noconflict/ext-language_tools";
+
+// nodejs library that concatenates classes
 
 
 class Dashboard extends React.Component {
@@ -117,18 +108,14 @@ class Dashboard extends React.Component {
     }
 
     getActiveTab() {
-        let activeTab = this.state.tabs
+        return this.state.tabs
             .filter(tab => tab.active)[0];
-        console.log(activeTab);
-        return activeTab;
     }
 
     setActiveTabText(e) {
         // todo send for planning?
         let activeTab = this.state.tabs
             .filter(tab => tab.active)[0];
-
-        console.log(activeTab)
 
         if (activeTab.text !== e) {
             activeTab.text = e;
