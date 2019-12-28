@@ -31,8 +31,9 @@ import {
 } from "reactstrap";
 
 import AceEditor from "react-ace";
-import "ace-builds/src-noconflict/mode-java";
-import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/mode-mysql";
+import "ace-builds/src-noconflict/theme-tomorrow_night";
+import "ace-builds/src-noconflict/ext-language_tools";
 
 
 class Dashboard extends React.Component {
@@ -44,7 +45,8 @@ class Dashboard extends React.Component {
             {
                 name: "Query",
                 active: true,
-                key: 0
+                key: 0,
+                text: ""
             }
         ];
 
@@ -53,11 +55,8 @@ class Dashboard extends React.Component {
         this.newTab = this.newTab.bind(this);
         this.setActiveTab = this.setActiveTab.bind(this);
         this.closeTab = this.closeTab.bind(this);
-    }
-
-    onEditorChange() {
-        //
-        // Todo send for planning?
+        this.getActiveTab = this.getActiveTab.bind(this);
+        this.setActiveTabText = this.setActiveTabText.bind(this);
     }
 
     newTab() {
@@ -66,7 +65,8 @@ class Dashboard extends React.Component {
             {
                 name: "Query",
                 active: true,
-                key: this.state.tabs.length
+                key: this.state.tabs.length,
+                text: ""
             }
         );
         this.setState(this.state);
@@ -87,7 +87,8 @@ class Dashboard extends React.Component {
                 {
                     name: "Query",
                     active: true,
-                    key: 0
+                    key: 0,
+                    text: ""
                 }
             )
         }
@@ -100,8 +101,6 @@ class Dashboard extends React.Component {
 
         this.setState(this.state);
 
-        console.log(this.state.tabs)
-
         // ---- helper methods ----
 
         function removeItem(items, i) {
@@ -110,10 +109,29 @@ class Dashboard extends React.Component {
 
 
         function thereIsAnActiveTab(tabs) {
-            for(const tab of tabs) {
-                if(tab.active) return true;
+            for (const tab of tabs) {
+                if (tab.active) return true;
             }
             return false;
+        }
+    }
+
+    getActiveTab() {
+        let activeTab = this.state.tabs
+            .filter(tab => tab.active)[0];
+        console.log(activeTab);
+        return activeTab;
+    }
+
+    setActiveTabText(e) {
+        // todo send for planning?
+        let activeTab = this.state.tabs
+            .filter(tab => tab.active)[0];
+
+        console.log(activeTab)
+
+        if (activeTab.text !== e) {
+            activeTab.text = e;
         }
     }
 
@@ -137,7 +155,7 @@ class Dashboard extends React.Component {
                                 )
                             } else {
                                 return (
-                                    <li className="nav-item" key={index} >
+                                    <li className="nav-item" key={index}>
                                         <div className="nav-link">
                                             <a href="#" onClick={() => this.setActiveTab(index)}>{tab.name + tab.key} </a>
                                             <a href="#" onClick={() => this.closeTab(index)}>
@@ -155,12 +173,21 @@ class Dashboard extends React.Component {
                         <a className="nav-link" href="#" onClick={this.newTab}>+</a>
                     </li>
                 </ul>
+                {console.log(this.getActiveTab())}
                 <AceEditor
-                    mode="java"
-                    theme="github"
-                    onChange={this.onEditorChange}
+                    mode="mysql"
+                    theme="tomorrow_night"
                     name="UNIQUE_ID_OF_DIV"
                     editorProps={{$blockScrolling: true}}
+                    fontSize={20}
+                    width={"100%"}
+                    height={"300px"}
+                    enableLiveAutocompletion
+                    enableBasicAutocompletion
+                    value={this.getActiveTab().text}
+                    onChange={this.setActiveTabText}
+                    // https://stackoverflow.com/questions/53622096/how-to-specify-a-list-of-custom-tokens-to-list-for-autocompletion-in-ace-editor
+
                 />
             </>
         );
@@ -172,11 +199,8 @@ class Dashboard extends React.Component {
                 <div className="content">
                     <Row>
                         <Col xs="12">
-                            <Card>
-                                <CardBody>
-                                    {this.queryTabs()}
-                                </CardBody>
-                            </Card>
+
+                            {this.queryTabs()}
                         </Col>
                     </Row>
                     <Row>
