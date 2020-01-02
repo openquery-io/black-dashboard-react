@@ -25,7 +25,6 @@ var routes = [
   {
     path: "/query",
     name: "Query",
-    rtlName: "لوحة القيادة",
     icon: "tim-icons icon-zoom-split",
     component: Dashboard,
     layout: "/admin"
@@ -33,7 +32,6 @@ var routes = [
   {
     path: "/jobs",
     name: "Jobs",
-    rtlName: "لوحة القيادة",
     icon: "tim-icons icon-components",
     component: Jobs,
     layout: "/admin"
@@ -41,7 +39,6 @@ var routes = [
   {
     path: "/datasets",
     name: "Datasets",
-    rtlName: "الرموز",
     icon: "tim-icons icon-app",
     component: Datasets,
     layout: "/admin"
@@ -49,7 +46,6 @@ var routes = [
   {
     path: "/config",
     name: "Configuration",
-    rtlName: "خرائط",
     icon: "tim-icons icon-settings-gear-63",
     component: Configuration,
     layout: "/admin"
@@ -57,7 +53,6 @@ var routes = [
   {
     path: "/docs",
     name: "Docs",
-    rtlName: "خرائط",
     icon: "tim-icons icon-single-copy-04",
     component: Docs,
     layout: "/admin"
